@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yueshengwujie.cn/2017/03/07/hexo笔记/index.html">
 <meta property="og:site_name" content="月生无界的博客">
 <meta property="og:description" content="开始的开始一开始成为javaer，并不知道有个人博客的这种东西。后来入行了，慢慢了解更多，知道了有个人博客，然而并没有觉得自己也需要一个属于自己的博客。只是突然间，在16年初，和朋友好奇之下买了域名，用github搭建了一个个人博客。而当时我的博客，还是直接把别人的fork下来，然后放上去。懵懂无知的直接修改主页的内容，不知道需要去配置文件里面修改配置。弄着弄着，也就放弃了，可以说甚至还没有开始。">
-<meta property="og:updated_time" content="2017-03-07T06:16:45.187Z">
+<meta property="og:updated_time" content="2017-03-07T08:18:59.190Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo笔记">
 <meta name="twitter:description" content="开始的开始一开始成为javaer，并不知道有个人博客的这种东西。后来入行了，慢慢了解更多，知道了有个人博客，然而并没有觉得自己也需要一个属于自己的博客。只是突然间，在16年初，和朋友好奇之下买了域名，用github搭建了一个个人博客。而当时我的博客，还是直接把别人的fork下来，然后放上去。懵懂无知的直接修改主页的内容，不知道需要去配置文件里面修改配置。弄着弄着，也就放弃了，可以说甚至还没有开始。">
@@ -92,11 +92,9 @@
 					<nav class="header-nav">
 						<div class="social">
 							
-								<a class="github" target="_blank" href="https://github.com/yueshengwujie/yueshengwujie.github.io" title="github">github</a>
+								<a class="github" target="_blank" href="https://github.com/yueshengwujie" title="github">github</a>
 					        
-								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
-					        
-								<a class="rss" target="_blank" href="#" title="rss">rss</a>
+								<a class="weibo" target="_blank" href="http://weibo.com/yueshengwujie" title="weibo">weibo</a>
 					        
 						</div>
 					</nav>
@@ -154,11 +152,9 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="https://github.com/yueshengwujie/yueshengwujie.github.io" title="github">github</a>
+						<a class="github" target="_blank" href="https://github.com/yueshengwujie" title="github">github</a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
-			        
-						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+						<a class="weibo" target="_blank" href="http://weibo.com/yueshengwujie" title="weibo">weibo</a>
 			        
 				</div>
 			</nav>
@@ -204,56 +200,13 @@
       
         <p><strong>开始的开始</strong><br>一开始成为javaer，并不知道有个人博客的这种东西。<br>后来入行了，慢慢了解更多，知道了有个人博客，然而并没有觉得自己也需要一个属于自己的博客。<br>只是突然间，在16年初，和朋友好奇之下买了域名，用github搭建了一个个人博客。<br>而当时我的博客，还是直接把别人的fork下来，然后放上去。<br>懵懂无知的直接修改主页的内容，不知道需要去配置文件里面修改配置。<br>弄着弄着，也就放弃了，可以说甚至还没有开始。</p>
 <hr>
-<p><strong>另一个开始</strong><br>这一段时间，收到了好多次阿里云域名快失效的邮件，<br>从一开始的不愿意理会，到后来，不知怎的，就上去续了费，<br>也是突然才记得，自己有一个已经开了一年的个人博客，<br>于是，重新开始了个人博客之路，也许会夭折，但绝不是现在，<br>也非常感谢一位大神提供的开源主题。<br><a href="http://litten.me/" target="_blank" rel="external">大神的博客</a></p>
+<p><strong>另一个开始</strong><br>这一段时间，收到了好多次阿里云域名快失效的邮件，<br>从一开始的不愿意理会，到后来，不知怎的，就上去续了费，<br>也是突然才记得，自己有一个已经开了一年的个人博客，<br>于是，重新开始了个人博客之路，也许会夭折，但绝不是现在，<br>也非常感谢一位大神提供的开源主题。<br><a href="http://litten.me/" target="_blank" rel="external">传送门：大神的博客</a></p>
 <hr>
-<p><strong>正餐</strong><br><a id="more"></a><br>环境工具：git,node.js,hexo,Sublime<br>搭建过程：<br>1、git里面Create a new repository（新建仓库），名字为git用户名.github.io，例如我的：yueshengwujie.github.io<br>2、DNS绑定域名（网上教程），github中最简单做法，直接添加一个名为CNAME的文件（无后缀），里面直接填写域名<br>3、配置SSH key，<a href="#">ssh-keygen -t rsa -C “邮件地址”</a>生成密钥，找到用户目录下<a href="#">.ssh\id_rsa.pub</a>文件，<br>直接打开复制内容到github中的个人设置 -&gt; SSH and GPG keys -&gt; New SSH key<br>4、git bash中操作指令(随便一个文件目录下操作)</p>
-<pre>
-$ npm install -g hexo # 安装hexo
-$ hexo init # 初始化
-$ hexo g # 生成
-$ hexo s # 启动服务，本地浏览器访问[http://localhost:4000]
-$ git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia # 下载主题，个人比较喜欢的主题，也是我现在的主题
-$ hexo d # 发布上传到git
-</pre>
-
-<p>5、配置文件的修改<br>主目录的<a href="#">_config.yml</a>配置文件的修改</p>
-<pre>
-# Extensions
-## Plugins: https://hexo.io/plugins/
-## Themes: https://hexo.io/themes/
-theme: yilia # 主题修改，将主题修改为theme目录下你喜欢的主题的文件夹的名字
-</pre>
-
-<p>下面配置关联github与本地仓库</p>
-<pre>
-deploy:
-  type: git
-  repository: git@github.com:liuxianan/liuxianan.github.io.git # 注意使用git ssh，不要用https
-  branch: master # 注意每个配置键值之间有一个空格分开
-</pre>
-
-<p>配置好以后安装一个必备插件</p>
-<pre>
-npm install hexo-deployer-git --save
-</pre>
-
-<p>6、常用的hexo命令</p>
-<pre>
-$ hexo new "postName" #新建文章
-$ hexo new page "pageName" #新建页面
-$ hexo generate #生成静态页面至public目录
-$ hexo server #开启预览访问端口（默认端口4000，'ctrl + c'关闭server）
-$ hexo deploy #部署到GitHub
-$ hexo help  # 查看帮助
-$ hexo version  #查看Hexo的版本
-
-# 缩写
-$ hexo n == $ hexo new
-$ hexo g == $ hexo generate
-$ hexo s == $ hexo server
-$ hexo d == $ hexo deploy
-</pre>
-
+<p><strong>正餐</strong><br><a id="more"></a><br>环境工具：git,node.js,hexo,Sublime<br>搭建过程：<br>1、git里面Create a new repository（新建仓库），名字为git用户名.github.io，例如我的：yueshengwujie.github.io<br>2、DNS绑定域名（网上教程），github中最简单做法，直接添加一个名为CNAME的文件（无后缀），里面直接填写域名<br>3、配置SSH key，<a href="#">ssh-keygen -t rsa -C “邮件地址”</a>生成密钥，找到用户目录下<a href="#">.ssh\id_rsa.pub</a>文件，<br>直接打开复制内容到github中的个人设置 -&gt; SSH and GPG keys -&gt; New SSH key<br>4、git bash中操作指令(随便一个文件目录下操作)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo # 安装hexo</div><div class="line">$ hexo init # 初始化</div><div class="line">$ hexo g # 生成</div><div class="line">$ hexo s # 启动服务，本地浏览器访问[http://localhost:4000]</div><div class="line">$ git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia # 下载主题，个人比较喜欢的主题，也是我现在的主题</div><div class="line">$ hexo d # 发布上传到git</div></pre></td></tr></table></figure></p>
+<p>5、配置文件的修改<br>主目录的<a href="#">_config.yml</a>配置文件的修改<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># Extensions</div><div class="line">## Plugins: https://hexo.io/plugins/</div><div class="line">## Themes: https://hexo.io/themes/</div><div class="line">theme: yilia # 主题修改，将主题修改为theme目录下你喜欢的主题的文件夹的名字</div></pre></td></tr></table></figure></p>
+<p>下面配置关联github与本地仓库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repository: git@github.com:liuxianan/liuxianan.github.io.git # 注意使用git ssh，不要用https</div><div class="line">  branch: master # 注意每个配置键值之间有一个空格分开</div></pre></td></tr></table></figure></p>
+<p>配置好以后安装一个必备插件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
+<p>6、常用的hexo命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">$ hexo new &quot;postName&quot; #新建文章</div><div class="line">$ hexo new page &quot;pageName&quot; #新建页面</div><div class="line">$ hexo generate #生成静态页面至public目录</div><div class="line">$ hexo server #开启预览访问端口（默认端口4000，&apos;ctrl + c&apos;关闭server）</div><div class="line">$ hexo deploy #部署到GitHub</div><div class="line">$ hexo help  # 查看帮助</div><div class="line">$ hexo version  #查看Hexo的版本</div><div class="line"></div><div class="line"># 缩写</div><div class="line">$ hexo n == $ hexo new</div><div class="line">$ hexo g == $ hexo generate</div><div class="line">$ hexo s == $ hexo server</div><div class="line">$ hexo d == $ hexo deploy</div></pre></td></tr></table></figure></p>
 <p>7、关于<a href="#">_config.yml</a>配置文件的修改<br>该配置文件在主目录下有一个，在themes/yilia目录下也有一个，后一个是相关于主题的配置。<br>如果要添加一些静态资源，如图片，可以回到根目录下的source目录下添加一个文件夹photo，<br>然后将图片放入，则可以在博客中使用”![图片描述](/photo/xxx.jpg)”直接插入</p>
 <hr>
 <p>此篇博客只做简单的记录，关于一些详细的教程，相信网上已经有很多教程。<br><a href="https://github.com/yueshengwujie/backup" target="_blank" rel="external">个人配置参考源码</a></p>
