@@ -27,8 +27,7 @@ var BackPic = (function(){
                 'http://7ximdq.com1.z0.glb.clouddn.com/1432456940456?imageView2/2/w/640/format/jpg',
                 'http://7ximdq.com1.z0.glb.clouddn.com/1432458590760?imageView2/2/w/640/format/jpg',
                 'http://7ximdq.com1.z0.glb.clouddn.com/1432458591836?imageView2/2/w/650/format/jpg',
-                'http://7ximdq.com1.z0.glb.clouddn.com/1432458593460?imageView2/2/w/600/format/jpg',
-                'http://7ximdq.com1.z0.glb.clouddn.com/1432457205540?imageView2/2/w/550/format/jpg'];
+                'http://7ximdq.com1.z0.glb.clouddn.com/1432458593460?imageView2/2/w/600/format/jpg'];
 	var num = Math.floor(Math.random()*pics.length);
 	var url = pics[num];
 	return {
