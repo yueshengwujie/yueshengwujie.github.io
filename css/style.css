@@ -676,6 +676,13 @@ a {
 #header .header-nav .social a.mail:hover {
   border: 1px solid #006b98;
 }
+#header .header-nav .social a.oschina {
+  background: url("/img/oschina.png") center no-repeat #005a87;
+  border: 1px solid #005a87;
+}
+#header .header-nav .social a.oschina:hover {
+  border: 1px solid #006b98;
+}
 #header .switch-part {
   width: 100%;
   position: absolute;
