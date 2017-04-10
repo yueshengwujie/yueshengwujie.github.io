@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="baidu-site-verification" content="NYLpcPZ0IA" />
+  <meta name="google-site-verification" content="CUZytgvRujBHA2YWbgTY5Vneztie0eSScCxKCUXxOVw" />
+  <meta charset="utf-8">
+  
+  <title>自动生成java实体类的工具类 | 月生无界的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="写实体类的悲伤写一个java实体类，需要对着数据库的表来写，还要写注释，注解，虽然可以一键生成get和set方法，但是当表字段非常多的时候，真的是挺烦的一件事情，我一直信奉一个观念，能自动化的，就不要动手了，写代码也应该是一样，很多人都知道，mybatis提供的生成器，可以生成实体类啊，dao啊，还有xml，多方便，但是我开发的数据库的表的字段特殊啊，于是自己网上找个例子，然后照着写了一个，强行装">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自动生成java实体类的工具类">
+<meta property="og:url" content="http://yueshengwujie.cn/2017/04/10/自动生成java实体类的工具类/index.html">
+<meta property="og:site_name" content="月生无界的博客">
+<meta property="og:description" content="写实体类的悲伤写一个java实体类，需要对着数据库的表来写，还要写注释，注解，虽然可以一键生成get和set方法，但是当表字段非常多的时候，真的是挺烦的一件事情，我一直信奉一个观念，能自动化的，就不要动手了，写代码也应该是一样，很多人都知道，mybatis提供的生成器，可以生成实体类啊，dao啊，还有xml，多方便，但是我开发的数据库的表的字段特殊啊，于是自己网上找个例子，然后照着写了一个，强行装">
+<meta property="og:updated_time" content="2017-04-10T03:29:53.642Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="自动生成java实体类的工具类">
+<meta name="twitter:description" content="写实体类的悲伤写一个java实体类，需要对着数据库的表来写，还要写注释，注解，虽然可以一键生成get和set方法，但是当表字段非常多的时候，真的是挺烦的一件事情，我一直信奉一个观念，能自动化的，就不要动手了，写代码也应该是一样，很多人都知道，mybatis提供的生成器，可以生成实体类啊，dao啊，还有xml，多方便，但是我开发的数据库的表的字段特殊啊，于是自己网上找个例子，然后照着写了一个，强行装">
+  
+    <link rel="alternative" href="/atom.xml" title="月生无界的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img lazy-src="/photo/head.png" class="js-avatar">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">月生无界</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">无界伴月生，星辉纵天宇</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/yueshengwujie" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/yueshengwujie" title="weibo">weibo</a>
+					        
+								<a class="oschina" target="_blank" href="https://my.oschina.net/yueshengwujie/blog" title="oschina">oschina</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/java实体类/" style="font-size: 10px;">java实体类</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/mybatis/" style="font-size: 10px;">mybatis</a> <a href="/tags/回溯算法/" style="font-size: 10px;">回溯算法</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/幻方/" style="font-size: 10px;">幻方</a> <a href="/tags/数独/" style="font-size: 10px;">数独</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/自动生成/" style="font-size: 10px;">自动生成</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">作为一名程序猿，我内心仍拥有诗人般的优雅，也许我的人生，在转角处选错了方向，但我从未后悔！</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">月生无界</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/photo/head.png" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">月生无界</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">无界伴月生，星辉纵天宇</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/yueshengwujie" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/yueshengwujie" title="weibo">weibo</a>
+			        
+						<a class="oschina" target="_blank" href="https://my.oschina.net/yueshengwujie/blog" title="oschina">oschina</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-自动生成java实体类的工具类" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/04/10/自动生成java实体类的工具类/" class="article-date">
+  	<time datetime="2017-04-10T02:49:32.000Z" itemprop="datePublished">2017-04-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      自动生成java实体类的工具类
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java实体类/">java实体类</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/自动生成/">自动生成</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="写实体类的悲伤"><a href="#写实体类的悲伤" class="headerlink" title="写实体类的悲伤"></a>写实体类的悲伤</h3><p>写一个java实体类，需要对着数据库的表来写，还要写注释，注解，虽然可以一键生成get和set方法，<br>但是当表字段非常多的时候，真的是挺烦的一件事情，<br>我一直信奉一个观念，能自动化的，就不要动手了，写代码也应该是一样，<br>很多人都知道，mybatis提供的生成器，可以生成实体类啊，dao啊，还有xml，多方便，<br>但是我开发的数据库的表的字段特殊啊，于是自己网上找个例子，然后照着写了一个，强行装逼，<br>从此，实体类，dao，xml一键生成，完美！</p>
+<hr>
+<h3 id="自动生成的本质"><a href="#自动生成的本质" class="headerlink" title="自动生成的本质"></a>自动生成的本质</h3><p>所谓自动生成对应的类，其本质也是使用代码，拼凑java类的代码字符串内容，然后生成一个file，<br>把内容流写入，在项目对应路径下直接生成一个需要的文件，当然，只适用于格式固定，有规律的类。</p>
+<hr>
+<h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h3><a id="more"></a>
+<p>（1）初始化全局常量，以及定义对应变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 数据库配置</div><div class="line"> */</div><div class="line">private final static String pgUrl = &quot;jdbc:postgresql://192.168.1.69:5432/test_db&quot;;</div><div class="line">private final static String username = &quot;dbuser&quot;;</div><div class="line">private final static String password = &quot;123456&quot;;</div><div class="line">/**</div><div class="line"> * 包路径配置</div><div class="line"> */</div><div class="line">private final static String domain = &quot;com.test.domain&quot;;</div><div class="line">private final static String mapper = &quot;com.test.mapper&quot;;</div><div class="line">private final static String I_mapper = &quot;com.test.mapper&quot;;</div><div class="line">private final static String mapper_impl = &quot;com.test.mapper.impl&quot;;</div><div class="line">private final static String I_service = &quot;com.test.service&quot;;</div><div class="line">private final static String service_impl = &quot;com.test.service.impl&quot;;</div><div class="line">//表名</div><div class="line">private String tableNames = &quot;&quot;;</div><div class="line">// 全列名数组（没有做大小写转换,没有去除字段前缀）</div><div class="line">private String[] all_colnames;</div><div class="line">// 列名类型数组</div><div class="line">private String[] col_types; </div><div class="line">// 列注释数组</div><div class="line">private String[] col_remarks; </div><div class="line">// 是否需要导入包java.util.Date</div><div class="line">private boolean is_util = false; </div><div class="line">//作者</div><div class="line">private String authors = &quot;lmshe&quot;;</div></pre></td></tr></table></figure></p>
+<hr>
+<p>（2）获取数据库连接，并初始化相关变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line">public void generatorUtils(String tableName,String author)&#123;</div><div class="line">	</div><div class="line">	tableNames = tableName;</div><div class="line">	authors = author;</div><div class="line">	</div><div class="line">	Connection conn = null; </div><div class="line">	PreparedStatement pstmt = null;</div><div class="line">	try &#123;</div><div class="line">		// 得到数据库连接</div><div class="line">		conn = DriverManager.getConnection(pgUrl, username, password);</div><div class="line">		String strsql = &quot;select * from &quot; + tableName;</div><div class="line">		pstmt = conn.prepareStatement(strsql);</div><div class="line">		ResultSetMetaData rsmd = pstmt.getMetaData();</div><div class="line">		</div><div class="line">		// 查询该表共有多少列，并初始化相关数组</div><div class="line">		int size = rsmd.getColumnCount(); </div><div class="line">		all_colnames = new String[size];</div><div class="line">		col_types = new String[size];</div><div class="line">		col_remarks = new String[size];</div><div class="line">		</div><div class="line">		//初始化列注释</div><div class="line">		DatabaseMetaData dbmd = conn.getMetaData();</div><div class="line">		ResultSet rs = dbmd.getColumns(null, null, tableName, null);</div><div class="line">		int re = 0;</div><div class="line">		while (rs.next()) &#123;</div><div class="line">			String remarks = rs.getString(&quot;REMARKS&quot;);// 列描述</div><div class="line">			col_remarks[re] = remarks;</div><div class="line">			re++;</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		//初始化列名以及列的字段类型，同时初始化是否需要导入java.util.Date</div><div class="line">		for (int i = 0; i &lt; rsmd.getColumnCount(); i++) &#123;</div><div class="line">			all_colnames[i] = rsmd.getColumnName(i + 1);</div><div class="line">			col_types[i] = rsmd.getColumnTypeName(i + 1);</div><div class="line">			if (rsmd.getColumnTypeName(i + 1).equalsIgnoreCase(&quot;timestamp&quot;)) &#123;</div><div class="line">				is_util = true;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		//生成domain实体类</div><div class="line">		createDomainUtils();</div><div class="line">		//生成sql的xml</div><div class="line">		createMappingUtils();</div><div class="line">		//生成dao接口类</div><div class="line">		createIDaoUtils();</div><div class="line">		//生成dao实现类</div><div class="line">		createDaoImplUtils();</div><div class="line">	&#125; catch (SQLException e) &#123;</div><div class="line">		e.printStackTrace();</div><div class="line">	&#125; finally &#123;</div><div class="line">		try &#123;</div><div class="line">			conn.close();</div><div class="line">		&#125; catch (SQLException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<p>（3）生成domain类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div></pre></td><td class="code"><pre><div class="line">public void createDomainUtils() &#123;</div><div class="line">	try &#123;</div><div class="line">		String content = parseDomain();</div><div class="line">		String path = System.getProperty(&quot;user.dir&quot;) + &quot;/src/main/java/&quot; + domain.replaceAll(&quot;\\.&quot;, &quot;/&quot;);</div><div class="line">		File file = new File(path);</div><div class="line">		if (!file.exists()) &#123;</div><div class="line">			file.mkdirs();</div><div class="line">		&#125;</div><div class="line">		String resPath = path + &quot;/&quot; + initcap(tableNames.substring(2, tableNames.length())) + &quot;.java&quot;;</div><div class="line">		FileUtils.writeStringToFile(new File(resPath), content);</div><div class="line">		System.out.println(&quot;建立domain成功&quot;);</div><div class="line">	&#125; catch (Exception e) &#123;</div><div class="line">		e.printStackTrace();</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">private String parseDomain() &#123;</div><div class="line">	StringBuffer sb = new StringBuffer();</div><div class="line">	sb.append(&quot;package &quot; + domain + &quot;;\r\n\r\n&quot;);</div><div class="line">	//导入依赖包</div><div class="line">	if (is_util) &#123;</div><div class="line">		sb.append(&quot;import java.util.Date;\r\n\r\n&quot;);</div><div class="line">	&#125;</div><div class="line">	sb.append(&quot;import javax.persistence.Column;\r\n&quot;);</div><div class="line">	sb.append(&quot;import javax.persistence.Id;\r\n&quot;);</div><div class="line">	sb.append(&quot;import javax.persistence.Table;\r\n\r\n&quot;);</div><div class="line">	//添加注解</div><div class="line">	sb.append(&quot;/**\r\n&quot;);</div><div class="line">	sb.append(&quot; *\r\n&quot;);</div><div class="line">	sb.append(&quot; * @author &quot; + authors + &quot;\r\n&quot;);</div><div class="line">	SimpleDateFormat sf = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);</div><div class="line">	String date = sf.format(new Date());</div><div class="line">	sb.append(&quot; * @time &quot; + date + &quot;\r\n&quot;);</div><div class="line">	sb.append(&quot; * @desc \r\n&quot;);</div><div class="line">	sb.append(&quot; */\r\n&quot;);</div><div class="line">	//类主体</div><div class="line">	sb.append(&quot;@Table(name=\&quot;&quot; + tableNames + &quot;\&quot;)\r\n&quot;);</div><div class="line">	sb.append(&quot;public class &quot; + initcap(tableNames.substring(2))</div><div class="line">			+ &quot; &#123;\r\n\r\n&quot;);</div><div class="line">	//生成属性</div><div class="line">	processAllAttrs(sb);</div><div class="line">	sb.append(&quot;\r\n&quot;);</div><div class="line">	//生成方法</div><div class="line">	processAllMethod(sb);</div><div class="line">	sb.append(&quot;&#125;\r\n&quot;);</div><div class="line">	return sb.toString();</div><div class="line">&#125;</div><div class="line"></div><div class="line">private void processAllMethod(StringBuffer sb) &#123;</div><div class="line">	for (int i = 0; i &lt; all_colnames.length; i++) &#123;</div><div class="line">		String allColname = all_colnames[i];</div><div class="line">		String colname = getCamelStr(allColname);</div><div class="line">		if (colname.substring(0, 1).equals(&quot;f&quot;)) &#123;</div><div class="line">			colname = colname.substring(1);</div><div class="line">		&#125;</div><div class="line">		sb.append(&quot;\tpublic void set&quot; + initcap(colname) + &quot;(&quot; + sqlType2JavaType(col_types[i]) + &quot; &quot; + colname</div><div class="line">				+ &quot;)&#123;\r\n&quot;);</div><div class="line">		sb.append(&quot;\t\tthis.&quot; + colname + &quot;=&quot; + colname + &quot;;\r\n&quot;);</div><div class="line">		sb.append(&quot;\t&#125;\r\n\r\n&quot;);</div><div class="line"></div><div class="line">		sb.append(&quot;\tpublic &quot; + sqlType2JavaType(col_types[i]) + &quot; get&quot; + initcap(colname) + &quot;()&#123;\r\n&quot;);</div><div class="line">		sb.append(&quot;\t\treturn &quot; + colname + &quot;;\r\n&quot;);</div><div class="line">		sb.append(&quot;\t&#125;\r\n\r\n&quot;);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">private void processAllAttrs(StringBuffer sb) &#123;</div><div class="line">	for (int i = 0; i &lt; all_colnames.length; i++) &#123;</div><div class="line">		String remark = col_remarks[i];</div><div class="line">		if (remark != null) &#123;</div><div class="line">			sb.append(&quot;\t/**\r\n&quot;);</div><div class="line">			sb.append(&quot;\t * &quot; + remark + &quot;\r\n&quot;);</div><div class="line">			sb.append(&quot;\t */\r\n&quot;);</div><div class="line">		&#125;</div><div class="line">		String allColname = all_colnames[i];</div><div class="line">		String colname = getCamelStr(allColname);</div><div class="line">		if (allColname.equals(&quot;id&quot;)) &#123;</div><div class="line">			sb.append(&quot;\t@Id\r\n&quot;);</div><div class="line">			sb.append(&quot;\t@Column(name = \&quot;&quot;+allColname+&quot;\&quot;)\r\n&quot;);</div><div class="line">		&#125; else &#123;</div><div class="line">			sb.append(&quot;\t@Column(name=\&quot;&quot; + allColname + &quot;\&quot;)\r\n&quot;);</div><div class="line">		&#125;</div><div class="line">		if (colname.substring(0, 1).equals(&quot;f&quot;)) &#123;</div><div class="line">			colname = colname.substring(1);</div><div class="line">		&#125;</div><div class="line">		sb.append(&quot;\tprivate &quot; + sqlType2JavaType(col_types[i]) + &quot; &quot; + colname + &quot;;\r\n\r\n&quot;);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<p>（4）生成sql的xml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">public void createMappingUtils() &#123;</div><div class="line">	try &#123;</div><div class="line">		String content = parseMapping();</div><div class="line">		String path = System.getProperty(&quot;user.dir&quot;) + &quot;/src/main/java/&quot; + mapper.replaceAll(&quot;\\.&quot;, &quot;/&quot;);</div><div class="line">		File file = new File(path);</div><div class="line">		if (!file.exists()) &#123;</div><div class="line">			file.mkdirs();</div><div class="line">		&#125;</div><div class="line">		String resPath = path + &quot;/I&quot; + initcap(tableNames.substring(2, tableNames.length())) + &quot;Mapper.xml&quot;;</div><div class="line">		FileUtils.writeStringToFile(new File(resPath), content);</div><div class="line">		System.out.println(&quot;建立xml成功&quot;);</div><div class="line">	&#125; catch (Exception e) &#123;</div><div class="line">		e.printStackTrace();</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">private String parseMapping() &#123;</div><div class="line">	StringBuffer sb = new StringBuffer();</div><div class="line">	sb.append(&quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot;?&gt;\r\n&quot;);</div><div class="line">	sb.append(&quot;&lt;!DOCTYPE mapper PUBLIC \&quot;-//mybatis.org//DTD Mapper 3.0//EN\&quot; \&quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd\&quot;&gt;\r\n\r\n&quot;);</div><div class="line">	sb.append(&quot;&lt;mapper namespace=\&quot;com.unionbon.youlb.http.mapper.I&quot;+initcap(tableNames.substring(2))+&quot;Mapper\&quot;&gt;\r\n\r\n&quot;);</div><div class="line">	sb.append(&quot;\t&lt;resultMap id=\&quot;BaseResultMap\&quot; type=\&quot;com.unionbon.youlb.http.domain.&quot;+initcap(tableNames.substring(2))+&quot;\&quot;&gt;\r\n&quot;);</div><div class="line">	</div><div class="line">	for (int i = 0; i &lt; all_colnames.length; i++) &#123;</div><div class="line">		String allColname = all_colnames[i];</div><div class="line">		String colname = getCamelStr(allColname);</div><div class="line">		if (allColname.equals(&quot;id&quot;)) &#123;</div><div class="line">			sb.append(&quot;\t\t&lt;id column=\&quot;id\&quot; property=\&quot;id\&quot; jdbcType=\&quot;&quot;+sqlType2MybatisType(col_types[i])+&quot;\&quot; /&gt;\r\n&quot;);</div><div class="line">		&#125; else &#123;</div><div class="line">			if (colname.substring(0, 1).equals(&quot;f&quot;)) &#123;</div><div class="line">				colname = colname.substring(1);</div><div class="line">			&#125;</div><div class="line">			sb.append(&quot;\t\t&lt;result column=\&quot;&quot;+allColname+&quot;\&quot; property=\&quot;&quot;+colname+&quot;\&quot; jdbcType=\&quot;&quot;+sqlType2MybatisType(col_types[i])+&quot;\&quot; /&gt;\r\n&quot;);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	sb.append(&quot;\t&lt;/resultMap&gt;\r\n&quot;);</div><div class="line">	sb.append(&quot;&lt;/mapper&gt;&quot;);</div><div class="line">	return sb.toString();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<p>（5）生成dao以及实现类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div></pre></td><td class="code"><pre><div class="line">public void createIDaoUtils() &#123;</div><div class="line">	try &#123;</div><div class="line">		String content = parseIDao();</div><div class="line">		String path = System.getProperty(&quot;user.dir&quot;) + &quot;/src/main/java/&quot; + I_mapper.replaceAll(&quot;\\.&quot;, &quot;/&quot;);</div><div class="line">		File file = new File(path);</div><div class="line">		if (!file.exists()) &#123;</div><div class="line">			file.mkdirs();</div><div class="line">		&#125;</div><div class="line">		String resPath = path + &quot;/I&quot; + initcap(tableNames.substring(2, tableNames.length())) + &quot;Mapper.java&quot;;</div><div class="line">		FileUtils.writeStringToFile(new File(resPath), content);</div><div class="line">		System.out.println(&quot;建立dao接口类成功&quot;);</div><div class="line">	&#125; catch (Exception e) &#123;</div><div class="line">		e.printStackTrace();</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">private String parseIDao() &#123;</div><div class="line">	StringBuffer sb = new StringBuffer();</div><div class="line">	sb.append(&quot;package &quot; + I_mapper + &quot;;\r\n\r\n&quot;);</div><div class="line">	sb.append(&quot;import com.unionbon.youlb.http.mapper.IBaseMapper;\r\n&quot;);</div><div class="line">	sb.append(&quot;import com.unionbon.youlb.http.domain.&quot;+initcap(tableNames.substring(2))+&quot;;\r\n\r\n&quot;);</div><div class="line">	//添加注解</div><div class="line">	sb.append(&quot;/**\r\n&quot;);</div><div class="line">	sb.append(&quot; *\r\n&quot;);</div><div class="line">	sb.append(&quot; * @author &quot; + authors + &quot;\r\n&quot;);</div><div class="line">	SimpleDateFormat sf = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);</div><div class="line">	String date = sf.format(new Date());</div><div class="line">	sb.append(&quot; * @time &quot; + date + &quot;\r\n&quot;);</div><div class="line">	sb.append(&quot; * @desc \r\n&quot;);</div><div class="line">	sb.append(&quot; */\r\n&quot;);</div><div class="line">	//类主体</div><div class="line">	String idType = &quot;&quot;;</div><div class="line">	for (int i = 0; i &lt; all_colnames.length; i++) &#123;</div><div class="line">		String allColname = all_colnames[i];</div><div class="line">		if (allColname.equals(&quot;id&quot;)) &#123;</div><div class="line">			idType = sqlType2JavaType(col_types[i]);</div><div class="line">			break;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	sb.append(&quot;public interface I&quot; + initcap(tableNames.substring(2)) + &quot;Mapper extends IBaseMapper&lt;&quot;+initcap(tableNames.substring(2))+&quot;, &quot;+idType+&quot;&gt;&#123;\r\n\r\n&quot;);</div><div class="line">	sb.append(&quot;&#125;\r\n&quot;);</div><div class="line">	return sb.toString();</div><div class="line">&#125;</div><div class="line"></div><div class="line">public void createDaoImplUtils() &#123;</div><div class="line">	try &#123;</div><div class="line">		String content = parseDaoImpl();</div><div class="line">		String path = System.getProperty(&quot;user.dir&quot;) + &quot;/src/main/java/&quot; + mapper_impl.replaceAll(&quot;\\.&quot;, &quot;/&quot;);</div><div class="line">		File file = new File(path);</div><div class="line">		if (!file.exists()) &#123;</div><div class="line">			file.mkdirs();</div><div class="line">		&#125;</div><div class="line">		String resPath = path + &quot;/&quot; + initcap(tableNames.substring(2, tableNames.length())) + &quot;MapperImpl.java&quot;;</div><div class="line">		FileUtils.writeStringToFile(new File(resPath), content);</div><div class="line">		System.out.println(&quot;建立dao实现类成功&quot;);</div><div class="line">	&#125; catch (Exception e) &#123;</div><div class="line">		e.printStackTrace();</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">private String parseDaoImpl() &#123;</div><div class="line">	StringBuffer sb = new StringBuffer();</div><div class="line">	sb.append(&quot;package &quot; + mapper_impl + &quot;;\r\n\r\n&quot;);</div><div class="line">	sb.append(&quot;import com.unionbon.youlb.http.mapper.impl.BaseMapperImpl;\r\n&quot;);</div><div class="line">	sb.append(&quot;import com.unionbon.youlb.http.mapper.I&quot;+initcap(tableNames.substring(2))+&quot;Mapper;\r\n&quot;);</div><div class="line">	sb.append(&quot;import com.unionbon.youlb.http.domain.&quot;+initcap(tableNames.substring(2))+&quot;;\r\n\r\n&quot;);</div><div class="line">	//添加注解</div><div class="line">	sb.append(&quot;/**\r\n&quot;);</div><div class="line">	sb.append(&quot; *\r\n&quot;);</div><div class="line">	sb.append(&quot; * @author &quot; + authors + &quot;\r\n&quot;);</div><div class="line">	SimpleDateFormat sf = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);</div><div class="line">	String date = sf.format(new Date());</div><div class="line">	sb.append(&quot; * @time &quot; + date + &quot;\r\n&quot;);</div><div class="line">	sb.append(&quot; * @desc \r\n&quot;);</div><div class="line">	sb.append(&quot; */\r\n&quot;);</div><div class="line">	//类主体</div><div class="line">	String idType = &quot;&quot;;</div><div class="line">	for (int i = 0; i &lt; all_colnames.length; i++) &#123;</div><div class="line">		String allColname = all_colnames[i];</div><div class="line">		if (allColname.equals(&quot;id&quot;)) &#123;</div><div class="line">			idType = sqlType2JavaType(col_types[i]);</div><div class="line">			break;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	sb.append(&quot;public class &quot; + initcap(tableNames.substring(2)) + &quot;MapperImpl extends BaseMapperImpl&lt;&quot;+initcap(tableNames.substring(2))+&quot;, &quot;+idType+&quot;&gt; implements I&quot;+initcap(tableNames.substring(2))+&quot;Mapper&#123;\r\n\r\n&quot;);</div><div class="line">	sb.append(&quot;&#125;\r\n&quot;);</div><div class="line">	return sb.toString();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<p>（6）工具方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 把输入字符串的首字母改成大写</div><div class="line"> * </div><div class="line"> * @param str</div><div class="line"> * @return</div><div class="line"> */</div><div class="line">public static String initcap(String str) &#123;</div><div class="line">	char[] ch = str.toCharArray();</div><div class="line">	if (ch[0] &gt;= &apos;a&apos; &amp;&amp; ch[0] &lt;= &apos;z&apos;) &#123;</div><div class="line">		ch[0] = (char) (ch[0] - 32);</div><div class="line">	&#125;</div><div class="line">	return getCamelStr(new String(ch));</div><div class="line">&#125;</div><div class="line"></div><div class="line">/**</div><div class="line"> * </div><div class="line"> * @param s</div><div class="line"> * @return</div><div class="line"> * @author lmshe</div><div class="line"> * @time 2017年3月30日</div><div class="line"> * @desc 处理下横杠，并转为大写</div><div class="line"> */</div><div class="line">public static String getCamelStr(String s) &#123;</div><div class="line">	while (s.indexOf(&quot;_&quot;) &gt; 0) &#123;</div><div class="line">		int index = s.indexOf(&quot;_&quot;);</div><div class="line">		s = s.substring(0, index) + s.substring(index + 1, index + 2).toUpperCase() + s.substring(index + 2);</div><div class="line">	&#125;</div><div class="line">	return s;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/**</div><div class="line"> * </div><div class="line"> * @param sqlType</div><div class="line"> * @return</div><div class="line"> * @author lmshe</div><div class="line"> * @time 2017年3月30日</div><div class="line"> * @desc 数据库类型与java类型互转</div><div class="line"> */</div><div class="line">private String sqlType2JavaType(String sqlType) &#123;</div><div class="line">	if (sqlType.equalsIgnoreCase(&quot;bit&quot;)) &#123;</div><div class="line">		return &quot;bool&quot;;</div><div class="line">	&#125; else if (sqlType.equalsIgnoreCase(&quot;tinyint&quot;)) &#123;</div><div class="line">		return &quot;byte&quot;;</div><div class="line">	&#125; else if (sqlType.equalsIgnoreCase(&quot;int2&quot;)) &#123;</div><div class="line">		return &quot;short&quot;;</div><div class="line">	&#125; else if (sqlType.equalsIgnoreCase(&quot;int4&quot;) || sqlType.equals(&quot;serial&quot;)) &#123;</div><div class="line">		return &quot;Integer&quot;;</div><div class="line">	&#125; else if (sqlType.equalsIgnoreCase(&quot;int8&quot;)) &#123;</div><div class="line">		return &quot;Long&quot;;</div><div class="line">	&#125; else if (sqlType.equalsIgnoreCase(&quot;bigint&quot;)) &#123;</div><div class="line">		return &quot;Long&quot;;</div><div class="line">	&#125; else if (sqlType.equalsIgnoreCase(&quot;float&quot;)) &#123;</div><div class="line">		return &quot;float&quot;;</div><div class="line">	&#125; else if (sqlType.equalsIgnoreCase(&quot;decimal&quot;) || sqlType.equalsIgnoreCase(&quot;numeric&quot;)</div><div class="line">			|| sqlType.equalsIgnoreCase(&quot;real&quot;)) &#123;</div><div class="line">		return &quot;double&quot;;</div><div class="line">	&#125; else if (sqlType.equalsIgnoreCase(&quot;money&quot;) || sqlType.equalsIgnoreCase(&quot;smallmoney&quot;)) &#123;</div><div class="line">		return &quot;double&quot;;</div><div class="line">	&#125; else if (sqlType.equalsIgnoreCase(&quot;varchar&quot;) || sqlType.equalsIgnoreCase(&quot;char&quot;)</div><div class="line">			|| sqlType.equalsIgnoreCase(&quot;nvarchar&quot;) || sqlType.equalsIgnoreCase(&quot;nchar&quot;)) &#123;</div><div class="line">		return &quot;String&quot;;</div><div class="line">	&#125; else if (sqlType.equalsIgnoreCase(&quot;timestamp&quot;)) &#123;</div><div class="line">		return &quot;Date&quot;;</div><div class="line">	&#125; else if (sqlType.equalsIgnoreCase(&quot;image&quot;)) &#123;</div><div class="line">		return &quot;Blob&quot;;</div><div class="line">	&#125; else if (sqlType.equalsIgnoreCase(&quot;text&quot;)) &#123;</div><div class="line">		return &quot;Clob&quot;;</div><div class="line">	&#125;</div><div class="line">	return null;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/**</div><div class="line"> * </div><div class="line"> * @param sqlType</div><div class="line"> * @return</div><div class="line"> * @author lmshe</div><div class="line"> * @time 2017年3月31日</div><div class="line"> * @desc 数据库类型与mybatisxml的jdbc类型转换</div><div class="line"> */</div><div class="line">private String sqlType2MybatisType(String sqlType) &#123;</div><div class="line">	if (sqlType.equalsIgnoreCase(&quot;int4&quot;) || sqlType.equals(&quot;serial&quot;)) &#123;</div><div class="line">		return &quot;INTEGER&quot;;</div><div class="line">	&#125; else if (sqlType.equalsIgnoreCase(&quot;varchar&quot;)) &#123;</div><div class="line">		return &quot;VARCHAR&quot;;</div><div class="line">	&#125; else if (sqlType.equalsIgnoreCase(&quot;char&quot;))&#123;</div><div class="line">		return &quot;CHAR&quot;;</div><div class="line">	&#125;else if (sqlType.equalsIgnoreCase(&quot;timestamp&quot;)) &#123;</div><div class="line">		return &quot;TIMESTAMP&quot;;</div><div class="line">	&#125;else if(sqlType.equalsIgnoreCase(&quot;decimal&quot;))&#123;</div><div class="line">		return &quot;DECIMAL&quot;;</div><div class="line">	&#125;</div><div class="line">	return null;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<p>（7）测试<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * </div><div class="line"> * </div><div class="line"> * @author lmshe</div><div class="line"> * @time 2017年3月30日</div><div class="line"> * @desc 代码生成器</div><div class="line"> */</div><div class="line">public class Generator &#123;</div><div class="line">	//表名</div><div class="line">	private final static String tableName= &quot;t_users&quot;;</div><div class="line">	//作者</div><div class="line">	private  final static String author = &quot;lmshe&quot;;</div><div class="line">	//生成代码仅适用于表主键字段名为“id”，且其它字段以“f”开始,且字段都以下横杠连接</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		new GeneratorUtils().generatorUtils(tableName,author);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="寄语"><a href="#寄语" class="headerlink" title="寄语"></a>寄语</h3><p>当人生活成了回忆，不过是在等待逝去，而只有不断创造回忆，才是人生精彩的演绎</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/04/05/maven项目配置mybatis的一些问题记录/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">maven项目配置mybatis的一些问题记录</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="自动生成java实体类的工具类" data-title="自动生成java实体类的工具类" data-url="http://yueshengwujie.cn/2017/04/10/自动生成java实体类的工具类/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 月生无界
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+<! -- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  </div>
+</body>
+</html>

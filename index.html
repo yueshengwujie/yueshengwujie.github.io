@@ -106,7 +106,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/mybatis/" style="font-size: 10px;">mybatis</a> <a href="/tags/回溯算法/" style="font-size: 10px;">回溯算法</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/幻方/" style="font-size: 10px;">幻方</a> <a href="/tags/数独/" style="font-size: 10px;">数独</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+						<a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/java实体类/" style="font-size: 10px;">java实体类</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/mybatis/" style="font-size: 10px;">mybatis</a> <a href="/tags/回溯算法/" style="font-size: 10px;">回溯算法</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/幻方/" style="font-size: 10px;">幻方</a> <a href="/tags/数独/" style="font-size: 10px;">数独</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/自动生成/" style="font-size: 10px;">自动生成</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
 					</div>
 				</section>
 				
@@ -168,6 +168,66 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-自动生成java实体类的工具类" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/04/10/自动生成java实体类的工具类/" class="article-date">
+  	<time datetime="2017-04-10T02:49:32.000Z" itemprop="datePublished">2017-04-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/10/自动生成java实体类的工具类/">自动生成java实体类的工具类</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="写实体类的悲伤"><a href="#写实体类的悲伤" class="headerlink" title="写实体类的悲伤"></a>写实体类的悲伤</h3><p>写一个java实体类，需要对着数据库的表来写，还要写注释，注解，虽然可以一键生成get和set方法，<br>但是当表字段非常多的时候，真的是挺烦的一件事情，<br>我一直信奉一个观念，能自动化的，就不要动手了，写代码也应该是一样，<br>很多人都知道，mybatis提供的生成器，可以生成实体类啊，dao啊，还有xml，多方便，<br>但是我开发的数据库的表的字段特殊啊，于是自己网上找个例子，然后照着写了一个，强行装逼，<br>从此，实体类，dao，xml一键生成，完美！</p>
+<hr>
+<h3 id="自动生成的本质"><a href="#自动生成的本质" class="headerlink" title="自动生成的本质"></a>自动生成的本质</h3><p>所谓自动生成对应的类，其本质也是使用代码，拼凑java类的代码字符串内容，然后生成一个file，<br>把内容流写入，在项目对应路径下直接生成一个需要的文件，当然，只适用于格式固定，有规律的类。</p>
+<hr>
+<h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h3>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java实体类/">java实体类</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/自动生成/">自动生成</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2017/04/10/自动生成java实体类的工具类/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
     <article id="post-maven项目配置mybatis的一些问题记录" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -196,7 +256,7 @@
       
         <h3 id="1、maven项目mybatis依赖包配置（使用3-3-0版本的mybatis）"><a href="#1、maven项目mybatis依赖包配置（使用3-3-0版本的mybatis）" class="headerlink" title="1、maven项目mybatis依赖包配置（使用3.3.0版本的mybatis）"></a>1、maven项目mybatis依赖包配置（使用3.3.0版本的mybatis）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;dependency&gt;</div><div class="line">	&lt;groupId&gt;org.mybatis&lt;/groupId&gt;</div><div class="line">	&lt;artifactId&gt;mybatis&lt;/artifactId&gt;</div><div class="line">	&lt;version&gt;3.3.0&lt;/version&gt;</div><div class="line">&lt;/dependency&gt;</div></pre></td></tr></table></figure>
 <hr>
-<h3 id="2、mybatis配置文件"><a href="#2、mybatis配置文件" class="headerlink" title="2、mybatis配置文件 ###"></a>2、mybatis配置文件 ###
+<h3 id="2、mybatis配置文件"><a href="#2、mybatis配置文件" class="headerlink" title="2、mybatis配置文件"></a>2、mybatis配置文件</h3>
       
     </div>
     
