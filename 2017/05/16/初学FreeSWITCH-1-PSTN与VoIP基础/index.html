@@ -5,20 +5,18 @@
   <meta name="google-site-verification" content="CUZytgvRujBHA2YWbgTY5Vneztie0eSScCxKCUXxOVw" />
   <meta charset="utf-8">
   
-  <title>真正开始的博客之路 | 月生无界的博客</title>
+  <title>初学FreeSWITCH(1)--PSTN与VoIP基础 | 月生无界的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="寄语如果开始，那就不要轻易放弃，也许这就是梦想开始的地方">
+  <meta name="description" content="1、名词解释（1）FreeSWITCH：FreeSWITCH是一个开源的电话的软交换解决方案，包括一个软电话和软交换机用以提供语音和聊天的产品驱动。               FreeSWITCH 可以用作交换机引擎、PBX、多媒体网关以及多媒体服务器等。               FreeSWITCH的也提供了一个稳定的电话平台，许多广泛使用的免费电话就是在使用它开发的，但是它不支持视频通话">
 <meta property="og:type" content="article">
-<meta property="og:title" content="真正开始的博客之路">
-<meta property="og:url" content="http://yueshengwujie.cn/2017/03/06/真正开始的博客之路/index.html">
+<meta property="og:title" content="初学FreeSWITCH(1)--PSTN与VoIP基础">
+<meta property="og:url" content="http://yueshengwujie.cn/2017/05/16/初学FreeSWITCH-1-PSTN与VoIP基础/index.html">
 <meta property="og:site_name" content="月生无界的博客">
-<meta property="og:description" content="寄语如果开始，那就不要轻易放弃，也许这就是梦想开始的地方">
-<meta property="og:image" content="http://yueshengwujie.cn/photo/supplication.jpg">
-<meta property="og:updated_time" content="2017-03-08T02:12:02.180Z">
+<meta property="og:description" content="1、名词解释（1）FreeSWITCH：FreeSWITCH是一个开源的电话的软交换解决方案，包括一个软电话和软交换机用以提供语音和聊天的产品驱动。               FreeSWITCH 可以用作交换机引擎、PBX、多媒体网关以及多媒体服务器等。               FreeSWITCH的也提供了一个稳定的电话平台，许多广泛使用的免费电话就是在使用它开发的，但是它不支持视频通话">
+<meta property="og:updated_time" content="2017-05-16T04:25:14.798Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="真正开始的博客之路">
-<meta name="twitter:description" content="寄语如果开始，那就不要轻易放弃，也许这就是梦想开始的地方">
-<meta name="twitter:image" content="http://yueshengwujie.cn/photo/supplication.jpg">
+<meta name="twitter:title" content="初学FreeSWITCH(1)--PSTN与VoIP基础">
+<meta name="twitter:description" content="1、名词解释（1）FreeSWITCH：FreeSWITCH是一个开源的电话的软交换解决方案，包括一个软电话和软交换机用以提供语音和聊天的产品驱动。               FreeSWITCH 可以用作交换机引擎、PBX、多媒体网关以及多媒体服务器等。               FreeSWITCH的也提供了一个稳定的电话平台，许多广泛使用的免费电话就是在使用它开发的，但是它不支持视频通话">
   
     <link rel="alternative" href="/atom.xml" title="月生无界的博客" type="application/atom+xml">
   
@@ -169,11 +167,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-真正开始的博客之路" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-初学FreeSWITCH-1-PSTN与VoIP基础" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/03/06/真正开始的博客之路/" class="article-date">
-  	<time datetime="2017-03-06T10:01:28.000Z" itemprop="datePublished">2017-03-06</time>
+      <a href="/2017/05/16/初学FreeSWITCH-1-PSTN与VoIP基础/" class="article-date">
+  	<time datetime="2017-05-16T02:56:47.000Z" itemprop="datePublished">2017-05-16</time>
 </a>
     </div>
   
@@ -186,7 +184,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      真正开始的博客之路
+      初学FreeSWITCH(1)--PSTN与VoIP基础
     </h1>
   
 
@@ -195,7 +193,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/FreeSWITCH-PSTN-VoIP/">--FreeSWITCH --PSTN --VoIP</a></li></ul>
 	</div>
 
         
@@ -206,11 +204,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/photo/supplication.jpg" alt="“一首诗”"></p>
+        <h3 id="1、名词解释"><a href="#1、名词解释" class="headerlink" title="1、名词解释"></a>1、名词解释</h3><p>（1）FreeSWITCH：FreeSWITCH是一个开源的电话的软交换解决方案，包括一个软电话和软交换机用以提供语音和聊天的产品驱动。<br>               FreeSWITCH 可以用作交换机引擎、PBX、多媒体网关以及多媒体服务器等。<br>               FreeSWITCH的也提供了一个稳定的电话平台，许多广泛使用的免费电话就是在使用它开发的，但是它不支持视频通话。<br>（2）PSTN：Public Switched Telephone Network，公共交换电话网络，即我们日常打电话所用的电话网络。<br>（3）VoIP：Voice over Internet Protocol，即承载在ip网上的语音通信（例如：聊天软件的语音聊天）</p>
 <hr>
-<h3 id="寄语"><a href="#寄语" class="headerlink" title="寄语"></a>寄语</h3><p>如果开始，那就不要轻易放弃，也许这就是梦想开始的地方</p>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=25706282&auto=0&height=66"><br></iframe>
-
+<h3 id="2、电话号码区号"><a href="#2、电话号码区号" class="headerlink" title="2、电话号码区号"></a>2、电话号码区号</h3><a id="more"></a>
+<p>（1）固话长度：大省市（如北京、上海等）使用8位号码，其他小的省市使用7位号码<br>（2）区号：固话区号一般长度为2到3位（注：所有区号前面的0，属于国内长途字冠，它本身不是区号的一部分，当然，一般人把0当<br>           做区号的一部分），国内长途前面加一个0和区号，国际长途则需要在前面加两个0<br>（3）国家号：中国国家号86，北京区号10，那么在国外呼叫一个北京号码需要拨打（86+10+号码），另外每个国家前面还有国际长途<br>             字冠，因为各个国家有不同的国际长途字冠，所以同一用“+”号代替，即完整呼叫号为（+86 10 xxxxxxxx）</p>
+<hr>
+<h3 id="3、移动号码以及专用号段"><a href="#3、移动号码以及专用号段" class="headerlink" title="3、移动号码以及专用号段"></a>3、移动号码以及专用号段</h3><p>定义：移动号码，俗称手机号，具备可移动性以及漫游特性，都是以1开头，而且根据运营商不同，其开头三位数字也不同，前三位也<br>      为运营商的专用号段，例如中国移动的134,135等，而后面8位为号码，共十一位，170为虚拟运营商的专用号段</p>
+<hr>
+<h3 id="4、模拟信号与数字信号"><a href="#4、模拟信号与数字信号" class="headerlink" title="4、模拟信号与数字信号"></a>4、模拟信号与数字信号</h3><p>（1）模拟信号：连续性，距离会导致信号衰减，所以需要放大信号，但是会噪声同时放大，导致信噪比下降，严重时甚至难以分辨<br>（2）数字信号：离散性，根据抽样定理（当抽样频率是模拟信号最好频率的两倍，就能完全还原原来的模拟信号）转成数字信号</p>
+<hr>
+<h3 id="5、SIP是什么"><a href="#5、SIP是什么" class="headerlink" title="5、SIP是什么"></a>5、SIP是什么</h3><p>SIP，Session Initiation Protocol，会话发起协议，由IETF提出的IP电话信令协议，用于发起会话，它能控制多个参与者参加的多<br>媒体会话的建立和终结，并能动态调整和修改会话属性</p>
+<hr>
+<h3 id="寄语"><a href="#寄语" class="headerlink" title="寄语"></a>寄语</h3><p>这是新旅程的开始，我不期待终点，因为终点是结束，如果到达，剩下的只是回忆</p>
 
       
     </div>
@@ -220,15 +225,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/03/07/hexo笔记/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          hexo笔记
-        
-      </div>
-    </a>
   
+    <a href="/2017/04/10/自动生成java实体类的工具类/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">自动生成java实体类的工具类</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
   
 </nav>
 
