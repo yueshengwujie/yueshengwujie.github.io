@@ -7,16 +7,16 @@
   
   <title>初学FreeSWITCH(1)--PSTN与VoIP基础 | 月生无界的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、名词解释（1）FreeSWITCH：FreeSWITCH是一个开源的电话的软交换解决方案，包括一个软电话和软交换机用以提供语音和聊天的产品驱动。               FreeSWITCH 可以用作交换机引擎、PBX、多媒体网关以及多媒体服务器等。               FreeSWITCH的也提供了一个稳定的电话平台，许多广泛使用的免费电话就是在使用它开发的，但是它不支持视频通话">
+  <meta name="description" content="1、名词解释（1）FreeSWITCH：FreeSWITCH是一个开源的电话的软交换解决方案，包括一个软电话和软交换机用以提供语音和聊天的产品驱动。&amp;emsp;&amp;emsp;&amp;ensp;FreeSWITCH 可以用作交换机引擎、PBX、多媒体网关以及多媒体服务器等。&amp;emsp;&amp;emsp;&amp;ensp;FreeSWITCH的也提供了一个稳定的电话平台，许多广泛使用的免费电话就是在使用它开发的，但是它不">
 <meta property="og:type" content="article">
 <meta property="og:title" content="初学FreeSWITCH(1)--PSTN与VoIP基础">
 <meta property="og:url" content="http://yueshengwujie.cn/2017/05/16/初学FreeSWITCH-1-PSTN与VoIP基础/index.html">
 <meta property="og:site_name" content="月生无界的博客">
-<meta property="og:description" content="1、名词解释（1）FreeSWITCH：FreeSWITCH是一个开源的电话的软交换解决方案，包括一个软电话和软交换机用以提供语音和聊天的产品驱动。               FreeSWITCH 可以用作交换机引擎、PBX、多媒体网关以及多媒体服务器等。               FreeSWITCH的也提供了一个稳定的电话平台，许多广泛使用的免费电话就是在使用它开发的，但是它不支持视频通话">
-<meta property="og:updated_time" content="2017-05-16T04:27:36.900Z">
+<meta property="og:description" content="1、名词解释（1）FreeSWITCH：FreeSWITCH是一个开源的电话的软交换解决方案，包括一个软电话和软交换机用以提供语音和聊天的产品驱动。&amp;emsp;&amp;emsp;&amp;ensp;FreeSWITCH 可以用作交换机引擎、PBX、多媒体网关以及多媒体服务器等。&amp;emsp;&amp;emsp;&amp;ensp;FreeSWITCH的也提供了一个稳定的电话平台，许多广泛使用的免费电话就是在使用它开发的，但是它不">
+<meta property="og:updated_time" content="2017-05-19T08:11:05.383Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初学FreeSWITCH(1)--PSTN与VoIP基础">
-<meta name="twitter:description" content="1、名词解释（1）FreeSWITCH：FreeSWITCH是一个开源的电话的软交换解决方案，包括一个软电话和软交换机用以提供语音和聊天的产品驱动。               FreeSWITCH 可以用作交换机引擎、PBX、多媒体网关以及多媒体服务器等。               FreeSWITCH的也提供了一个稳定的电话平台，许多广泛使用的免费电话就是在使用它开发的，但是它不支持视频通话">
+<meta name="twitter:description" content="1、名词解释（1）FreeSWITCH：FreeSWITCH是一个开源的电话的软交换解决方案，包括一个软电话和软交换机用以提供语音和聊天的产品驱动。&amp;emsp;&amp;emsp;&amp;ensp;FreeSWITCH 可以用作交换机引擎、PBX、多媒体网关以及多媒体服务器等。&amp;emsp;&amp;emsp;&amp;ensp;FreeSWITCH的也提供了一个稳定的电话平台，许多广泛使用的免费电话就是在使用它开发的，但是它不">
   
     <link rel="alternative" href="/atom.xml" title="月生无界的博客" type="application/atom+xml">
   
@@ -107,7 +107,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/FreeSWITCH/" style="font-size: 10px;">FreeSWITCH</a> <a href="/tags/PSTN/" style="font-size: 10px;">PSTN</a> <a href="/tags/VoIP/" style="font-size: 10px;">VoIP</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/java实体类/" style="font-size: 10px;">java实体类</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/mybatis/" style="font-size: 10px;">mybatis</a> <a href="/tags/回溯算法/" style="font-size: 10px;">回溯算法</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/幻方/" style="font-size: 10px;">幻方</a> <a href="/tags/数独/" style="font-size: 10px;">数独</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/自动生成/" style="font-size: 10px;">自动生成</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+						<a href="/tags/FreeSWITCH/" style="font-size: 20px;">FreeSWITCH</a> <a href="/tags/PSTN/" style="font-size: 10px;">PSTN</a> <a href="/tags/SIP/" style="font-size: 10px;">SIP</a> <a href="/tags/VoIP/" style="font-size: 10px;">VoIP</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/java实体类/" style="font-size: 10px;">java实体类</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/mybatis/" style="font-size: 10px;">mybatis</a> <a href="/tags/回溯算法/" style="font-size: 10px;">回溯算法</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/幻方/" style="font-size: 10px;">幻方</a> <a href="/tags/数独/" style="font-size: 10px;">数独</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/自动生成/" style="font-size: 10px;">自动生成</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
 					</div>
 				</section>
 				
@@ -204,12 +204,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1、名词解释"><a href="#1、名词解释" class="headerlink" title="1、名词解释"></a>1、名词解释</h3><p>（1）FreeSWITCH：FreeSWITCH是一个开源的电话的软交换解决方案，包括一个软电话和软交换机用以提供语音和聊天的产品驱动。<br>               FreeSWITCH 可以用作交换机引擎、PBX、多媒体网关以及多媒体服务器等。<br>               FreeSWITCH的也提供了一个稳定的电话平台，许多广泛使用的免费电话就是在使用它开发的，但是它不支持视频通话。<br>（2）PSTN：Public Switched Telephone Network，公共交换电话网络，即我们日常打电话所用的电话网络。<br>（3）VoIP：Voice over Internet Protocol，即承载在ip网上的语音通信（例如：聊天软件的语音聊天）</p>
+        <h3 id="1、名词解释"><a href="#1、名词解释" class="headerlink" title="1、名词解释"></a>1、名词解释</h3><p>（1）FreeSWITCH：FreeSWITCH是一个开源的电话的软交换解决方案，包括一个软电话和软交换机用以提供语音和聊天的产品驱动。<br>&emsp;&emsp;&ensp;FreeSWITCH 可以用作交换机引擎、PBX、多媒体网关以及多媒体服务器等。<br>&emsp;&emsp;&ensp;FreeSWITCH的也提供了一个稳定的电话平台，许多广泛使用的免费电话就是在使用它开发的，但是它不支持视频通话。<br>（2）PSTN：Public Switched Telephone Network，公共交换电话网络，即我们日常打电话所用的电话网络。<br>（3）VoIP：Voice over Internet Protocol，即承载在ip网上的语音通信（例如：聊天软件的语音聊天）</p>
 <hr>
 <h3 id="2、电话号码区号"><a href="#2、电话号码区号" class="headerlink" title="2、电话号码区号"></a>2、电话号码区号</h3><a id="more"></a>
-<p>（1）固话长度：大省市（如北京、上海等）使用8位号码，其他小的省市使用7位号码<br>（2）区号：固话区号一般长度为2到3位（注：所有区号前面的0，属于国内长途字冠，它本身不是区号的一部分，当然，一般人把0当<br>           做区号的一部分），国内长途前面加一个0和区号，国际长途则需要在前面加两个0<br>（3）国家号：中国国家号86，北京区号10，那么在国外呼叫一个北京号码需要拨打（86+10+号码），另外每个国家前面还有国际长途<br>             字冠，因为各个国家有不同的国际长途字冠，所以同一用“+”号代替，即完整呼叫号为（+86 10 xxxxxxxx）</p>
+<p>（1）固话长度：大省市（如北京、上海等）使用8位号码，其他小的省市使用7位号码<br>（2）区号：固话区号一般长度为2到3位（注：所有区号前面的0，属于国内长途字冠，它本身不是区号的一部分，当然，一般人把0当<br>&emsp;&emsp;&ensp;做区号的一部分），国内长途前面加一个0和区号，国际长途则需要在前面加两个0<br>（3）国家号：中国国家号86，北京区号10，那么在国外呼叫一个北京号码需要拨打（86+10+号码），另外每个国家前面还有国际长途<br>&emsp;&emsp;&ensp;字冠，因为各个国家有不同的国际长途字冠，所以同一用“+”号代替，即完整呼叫号为（+86 10 xxxxxxxx）</p>
 <hr>
-<h3 id="3、移动号码以及专用号段"><a href="#3、移动号码以及专用号段" class="headerlink" title="3、移动号码以及专用号段"></a>3、移动号码以及专用号段</h3><p>定义：移动号码，俗称手机号，具备可移动性以及漫游特性，都是以1开头，而且根据运营商不同，其开头三位数字也不同，前三位也<br>      为运营商的专用号段，例如中国移动的134,135等，而后面8位为号码，共十一位，170为虚拟运营商的专用号段</p>
+<h3 id="3、移动号码以及专用号段"><a href="#3、移动号码以及专用号段" class="headerlink" title="3、移动号码以及专用号段"></a>3、移动号码以及专用号段</h3><p>定义：移动号码，俗称手机号，具备可移动性以及漫游特性，都是以1开头，而且根据运营商不同，其开头三位数字也不同，前三位也<br>&emsp;&emsp;&emsp;为运营商的专用号段，例如中国移动的134,135等，而后面8位为号码，共十一位，170为虚拟运营商的专用号段</p>
 <hr>
 <h3 id="4、模拟信号与数字信号"><a href="#4、模拟信号与数字信号" class="headerlink" title="4、模拟信号与数字信号"></a>4、模拟信号与数字信号</h3><p>（1）模拟信号：连续性，距离会导致信号衰减，所以需要放大信号，但是会噪声同时放大，导致信噪比下降，严重时甚至难以分辨<br>（2）数字信号：离散性，根据抽样定理（当抽样频率是模拟信号最好频率的两倍，就能完全还原原来的模拟信号）转成数字信号</p>
 <hr>
@@ -224,6 +224,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2017/05/16/初学FreeSWITCH-2-初识/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          初学FreeSWITCH(2)--初识
+        
+      </div>
+    </a>
   
   
     <a href="/2017/04/10/自动生成java实体类的工具类/" id="article-nav-older" class="article-nav-link-wrap">
